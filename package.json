@@ -1,0 +1,15 @@
+{
+  "name": "comrades-of-war-agent-api-examples",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "search": "node examples/search.mjs",
+    "buy": "node examples/buy-page.mjs"
+  },
+  "dependencies": {
+    "@x402/evm": "^2.20.0",
+    "@x402/fetch": "^2.20.0",
+    "viem": "^2.55.4"
+  }
+}
