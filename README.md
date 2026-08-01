@@ -61,6 +61,22 @@ Run the included A2A client:
 npm run search:a2a -- "servidor rust"
 ```
 
+## Discover through MCP
+
+Connect any Streamable HTTP MCP client to:
+
+```text
+https://comrades-of-war-router.discoglobal.workers.dev/mcp
+```
+
+The server exposes two read-only tools: `archive_catalog` reports the corpus coverage, while `search_archive` returns free previews and the exact x402 purchase URL for each matching page. The remote endpoint uses the direct Worker hostname so automated clients are not mistaken for unwanted crawlers at the main-domain edge.
+
+Run the included zero-dependency MCP client:
+
+```sh
+npm run search:mcp -- "servidor rust"
+```
+
 ## Buy one individual forum page
 
 ```text
@@ -105,6 +121,8 @@ It charges the same `$0.10` per-page price and returns one defined historical pa
 - [OpenAPI](https://comrades-of-war.com/openapi.json)
 - [x402 manifest](https://comrades-of-war.com/.well-known/x402)
 - [A2A Agent Card](https://comrades-of-war.com/.well-known/agent-card.json)
+- [MCP server manifest](https://comrades-of-war.com/.well-known/mcp/server.json)
+- [Remote MCP server](https://comrades-of-war-router.discoglobal.workers.dev/mcp)
 - [llms.txt](https://comrades-of-war.com/llms.txt)
 - [Developer landing page](https://comrades-of-war.com/agents)
 
