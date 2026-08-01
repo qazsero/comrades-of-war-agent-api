@@ -1,10 +1,11 @@
 {
   "name": "comrades-of-war-agent-api-examples",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "search": "node examples/search.mjs",
+    "search:a2a": "node examples/a2a-search.mjs",
     "buy": "node examples/buy-page.mjs"
   },
   "dependencies": {

@@ -45,6 +45,22 @@ curl 'https://comrades-of-war.com/agent/v1/search?q=servidor+rust&limit=5'
 
 Search results include the title, forum, date, post count, excerpt, `canonical_path`, and ready-to-use `purchase_url`. Discovery and previews are free, so an agent can establish relevance before paying.
 
+## Discover through A2A
+
+A2A-compatible agents can discover the archive through the standard Agent Card:
+
+```text
+GET https://comrades-of-war.com/.well-known/agent-card.json
+```
+
+The same card is mirrored at `https://comrades-of-war-router.discoglobal.workers.dev/.well-known/agent-card.json` for registries whose bot probes cannot traverse the main domain's Cloudflare rules. Its preferred JSON-RPC `SendMessage` interface accepts concise Spanish search text and returns free previews as structured JSON, including an exact x402 `purchase_url` for every result. A2A search itself is free; payment is required only when the agent follows a purchase URL for an individual archive page.
+
+Run the included A2A client:
+
+```sh
+npm run search:a2a -- "servidor rust"
+```
+
 ## Buy one individual forum page
 
 ```text
@@ -88,6 +104,7 @@ It charges the same `$0.10` per-page price and returns one defined historical pa
 - [Public catalog](https://comrades-of-war.com/agent/v1/catalog)
 - [OpenAPI](https://comrades-of-war.com/openapi.json)
 - [x402 manifest](https://comrades-of-war.com/.well-known/x402)
+- [A2A Agent Card](https://comrades-of-war.com/.well-known/agent-card.json)
 - [llms.txt](https://comrades-of-war.com/llms.txt)
 - [Developer landing page](https://comrades-of-war.com/agents)
 
