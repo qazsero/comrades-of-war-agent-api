@@ -1,0 +1,4 @@
+interface:
+  display_name: "Comrades of War Archive"
+  short_description: "Search and buy citable Spanish archive pages"
+  default_prompt: "Use $comrades-of-war-archive to find and retrieve a relevant cited page from the Comrades of War archive."

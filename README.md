@@ -10,6 +10,16 @@
 
 Private/staff areas, disciplinary reports, ban appeals, applications, and other sensitive categories are excluded from the commercial API.
 
+## Install the agent skill
+
+Install the portable Agent Skills package so compatible agents can search, validate, purchase, and cite archive pages safely:
+
+```sh
+npx skills add qazsero/comrades-of-war-agent-api --skill comrades-of-war-archive
+```
+
+The skill is also available for inspection at [`skills/comrades-of-war-archive/SKILL.md`](skills/comrades-of-war-archive/SKILL.md).
+
 ## Discover
 
 ```sh
