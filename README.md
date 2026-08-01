@@ -43,7 +43,7 @@ curl https://comrades-of-war.com/agent/v1/catalog
 curl 'https://comrades-of-war.com/agent/v1/search?q=servidor+rust&limit=5'
 ```
 
-Search results include the title, forum, date, post count, excerpt, `canonical_path`, and ready-to-use `purchase_url`. Discovery and previews are free, so an agent can establish relevance before paying.
+Search results include the title, forum, date, post count, excerpt, `canonical_path`, a direct `purchase_url`, and a `marketplace_purchase_url` with its JSON request body. Discovery and previews are free, so an agent can establish relevance before paying.
 
 ## Discover through A2A
 
@@ -121,6 +121,14 @@ It charges the same `$0.10` per-page price and returns one defined historical pa
 ## Buy through PayanAgent
 
 Agents using the PayanAgent marketplace can purchase the same individual-page product through the [Comrades of War offer](https://payanagent.com/marketplace/offers/kh7bynheh4p1cnnavwggbn54jn8bm55v). It costs `$0.10` USDC per selected page and settles directly to the public Comrades of War treasury address on Base. The associated [seller profile](https://payanagent.com/marketplace/agents/j57dxce8zqpmb91x9wz3rvysvx8bmg10) provides a public identity and receipt history for marketplace purchases.
+
+```sh
+curl -X POST https://payanagent.com/x402/kh7bynheh4p1cnnavwggbn54jn8bm55v \
+  -H 'content-type: application/json' \
+  -d '{"path":"/comrades-rust-vt23474.html","format":"json"}'
+```
+
+The first request returns PayanAgent's x402 challenge. Validate the same Base network, USDC asset, `$0.10` maximum, and Comrades of War treasury recipient before signing.
 
 ## Example agent requests
 

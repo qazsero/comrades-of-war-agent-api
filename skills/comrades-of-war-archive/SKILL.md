@@ -27,7 +27,7 @@ Good fits include historical research and journalism, Spanish Call of Duty clan 
 
 3. Review titles, sections, dates, previews, and post counts. Prefer the smallest set of pages that can answer the task. Do not pay merely because a keyword matched.
 
-4. Use only the `canonical_path` or `purchase_url` returned by search. Do not guess URLs or probe excluded categories.
+4. Use only the `canonical_path`, `purchase_url`, or `marketplace_purchase_url` returned by search. Do not guess URLs or probe excluded categories.
 
 ## Validate before paying
 
@@ -48,6 +48,15 @@ Content-Type: application/json
 
 Both methods charge the same price and retrieve one selected individual page.
 
+Agents already connected to PayanAgent may instead POST the same JSON body to the `marketplace_purchase_url` returned by search:
+
+```text
+POST https://payanagent.com/x402/kh7bynheh4p1cnnavwggbn54jn8bm55v
+Content-Type: application/json
+
+{"path":"/comrades-rust-vt23474.html","format":"json"}
+```
+
 Before signing, reject the challenge unless every condition matches:
 
 - Scheme: `exact`
@@ -55,8 +64,7 @@ Before signing, reject the challenge unless every condition matches:
 - Asset: `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` (USDC)
 - Recipient: `0x2640b45a8F31bB24Ee7F40b3772Dba3Da27553c5`
 - Maximum amount: `100000` atomic USDC (`$0.10`)
-- Resource host: `https://comrades-of-war.com`
-- Resource path: `/agent/v1/page`
+- Resource: either the direct `https://comrades-of-war.com/agent/v1/page` route or the exact PayanAgent `marketplace_purchase_url` returned by search
 
 Treat a `404` as unavailable and do not pay. Do not substitute another network, token, recipient, price, or host.
 
