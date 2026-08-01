@@ -9,7 +9,8 @@ const MAX_PRICE_ATOMIC = 100_000n;
 
 if (!process.env.EVM_PRIVATE_KEY) throw new Error('Set EVM_PRIVATE_KEY to a dedicated Base buyer wallet.');
 
-const path = process.argv[2] || '/comrades-rust-vt23474.html';
+const useJsonBody = process.argv.includes('--post');
+const path = process.argv.slice(2).find((argument) => !argument.startsWith('--')) || '/comrades-rust-vt23474.html';
 if (!/^\/[a-zA-Z0-9_%!(),.+-]+-vt\d+(?:\.start-\d+)?\.html$/.test(path)) {
   throw new Error('Pass a canonical topic path returned by /agent/v1/search.');
 }
@@ -26,14 +27,19 @@ const paidFetch = wrapFetchWithPaymentFromConfig(fetch, {
 });
 
 const url = new URL('https://comrades-of-war.com/agent/v1/page');
-url.searchParams.set('path', path);
-url.searchParams.set('format', 'json');
+if (!useJsonBody) {
+  url.searchParams.set('path', path);
+  url.searchParams.set('format', 'json');
+}
 
 const response = await paidFetch(url, {
+  method: useJsonBody ? 'POST' : 'GET',
   headers: {
     accept: 'application/json',
+    ...(useJsonBody ? { 'content-type': 'application/json' } : {}),
     'user-agent': 'ComradesOfWar-x402-Buyer-Example/1.0',
   },
+  ...(useJsonBody ? { body: JSON.stringify({ path, format: 'json' }) } : {}),
 });
 const body = await response.text();
 if (!response.ok) throw new Error(`Paid request failed with HTTP ${response.status}: ${body}`);

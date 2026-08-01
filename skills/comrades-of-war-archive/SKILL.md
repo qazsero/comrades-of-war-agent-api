@@ -37,6 +37,17 @@ Request the selected page without a payment header. Expect `402 Payment Required
 GET https://comrades-of-war.com/agent/v1/page?path=/comrades-rust-vt23474.html&format=json
 ```
 
+For a JSON-native marketplace or agent, use the equivalent route:
+
+```text
+POST https://comrades-of-war.com/agent/v1/page
+Content-Type: application/json
+
+{"path":"/comrades-rust-vt23474.html","format":"json"}
+```
+
+Both methods charge the same price and retrieve one selected individual page.
+
 Before signing, reject the challenge unless every condition matches:
 
 - Scheme: `exact`

@@ -83,7 +83,17 @@ npm run search:mcp -- "servidor rust"
 GET https://comrades-of-war.com/agent/v1/page?path=/comrades-rust-vt23474.html&format=json
 ```
 
-The first request returns `402 Payment Required`. An x402 client pays `$0.10` USDC and retries automatically. Each payment retrieves the selected individual forum page; it does not unlock the whole website and may not contain every page of a paginated thread. Payment goes to the public Comrades of War treasury address on Base:
+The first request returns `402 Payment Required`. An x402 client pays `$0.10` USDC and retries automatically. Each payment retrieves the selected individual forum page; it does not unlock the whole website and may not contain every page of a paginated thread.
+
+JSON-native agents and marketplaces can use the equivalent paid route with the same per-page price:
+
+```sh
+curl -X POST https://comrades-of-war.com/agent/v1/page \
+  -H 'content-type: application/json' \
+  -d '{"path":"/comrades-rust-vt23474.html","format":"json"}'
+```
+
+The first POST also returns `402 Payment Required`; after payment, the response contains only the selected individual page. Payment goes to the public Comrades of War treasury address on Base:
 
 ```text
 0x2640b45a8F31bB24Ee7F40b3772Dba3Da27553c5
@@ -94,6 +104,8 @@ Run the included buyer example with a dedicated wallet that holds a small amount
 ```sh
 npm install
 EVM_PRIVATE_KEY=0x... npm run buy -- /comrades-rust-vt23474.html
+# Equivalent JSON-body purchase:
+EVM_PRIVATE_KEY=0x... npm run buy:post -- /comrades-rust-vt23474.html
 ```
 
 Never use a primary wallet or commit a private key. The example rejects a different network, asset, recipient, or price above `$0.10`.

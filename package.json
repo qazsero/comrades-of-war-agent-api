@@ -1,6 +1,6 @@
 {
   "name": "comrades-of-war-agent-api-examples",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +8,8 @@
     "search": "node examples/search.mjs",
     "search:a2a": "node examples/a2a-search.mjs",
     "search:mcp": "node examples/mcp-search.mjs",
-    "buy": "node examples/buy-page.mjs"
+    "buy": "node examples/buy-page.mjs",
+    "buy:post": "node examples/buy-page.mjs --post"
   },
   "dependencies": {
     "@x402/evm": "^2.20.0",
