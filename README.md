@@ -66,6 +66,14 @@ EVM_PRIVATE_KEY=0x... npm run buy -- /comrades-rust-vt23474.html
 
 Never use a primary wallet or commit a private key. The example rejects a different network, asset, recipient, or price above `$0.10`.
 
+For automated compatibility probes or a first purchase without query parameters, use the fixed sample route:
+
+```text
+GET https://comrades-of-war.com/agent/v1/page/sample
+```
+
+It charges the same `$0.10` per-page price and returns one defined historical page. Research agents should normally use free search and purchase the specific result relevant to their task.
+
 ## Example agent requests
 
 - “Find and cite how a Spanish Call of Duty clan organized matches, servers, recruitment, and community life.”
