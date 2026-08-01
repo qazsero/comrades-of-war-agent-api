@@ -118,6 +118,10 @@ GET https://comrades-of-war.com/agent/v1/page/sample
 
 It charges the same `$0.10` per-page price and returns one defined historical page. Research agents should normally use free search and purchase the specific result relevant to their task.
 
+## Buy through PayanAgent
+
+Agents using the PayanAgent marketplace can purchase the same individual-page product through the [Comrades of War offer](https://payanagent.com/marketplace/offers/kh7bynheh4p1cnnavwggbn54jn8bm55v). It costs `$0.10` USDC per selected page and settles directly to the public Comrades of War treasury address on Base. The associated [seller profile](https://payanagent.com/marketplace/agents/j57dxce8zqpmb91x9wz3rvysvx8bmg10) provides a public identity and receipt history for marketplace purchases.
+
 ## Example agent requests
 
 - “Find and cite how a Spanish Call of Duty clan organized matches, servers, recruitment, and community life.”
@@ -137,6 +141,8 @@ It charges the same `$0.10` per-page price and returns one defined historical pa
 - [Remote MCP server](https://comrades-of-war-router.discoglobal.workers.dev/mcp)
 - [llms.txt](https://comrades-of-war.com/llms.txt)
 - [Developer landing page](https://comrades-of-war.com/agents)
+- [PayanAgent marketplace offer](https://payanagent.com/marketplace/offers/kh7bynheh4p1cnnavwggbn54jn8bm55v)
+- [PayanAgent seller profile](https://payanagent.com/marketplace/agents/j57dxce8zqpmb91x9wz3rvysvx8bmg10)
 
 The paid route declares the official x402 Bazaar extension. After its first successful Mainnet settlement through the Coinbase Developer Platform facilitator, agents can also discover it through Coinbase Bazaar and its MCP server.
 
