@@ -146,6 +146,7 @@ The first request returns PayanAgent's x402 challenge. Validate the same Base ne
 - [x402 manifest](https://comrades-of-war.com/.well-known/x402)
 - [A2A Agent Card](https://comrades-of-war.com/.well-known/agent-card.json)
 - [MCP server manifest](https://comrades-of-war.com/.well-known/mcp/server.json)
+- [MCP static server card](https://comrades-of-war.com/.well-known/mcp/server-card.json)
 - [Remote MCP server](https://comrades-of-war-router.discoglobal.workers.dev/mcp)
 - [llms.txt](https://comrades-of-war.com/llms.txt)
 - [Developer landing page](https://comrades-of-war.com/agents)
