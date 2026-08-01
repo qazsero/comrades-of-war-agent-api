@@ -1,14 +1,29 @@
-# Comrades of War Agent Archive API
+# Comrades of War — Spanish Gaming Community Archive API
 
-[Comrades of War](https://comrades-of-war.com/agents) provides machine-readable access to a curated Spanish-language gaming and role-play community archive from 2010–2015.
+[Comrades of War](https://comrades-of-war.com/agents) preserves nearly five years of activity from a popular Spanish Call of Duty clan and gaming community founded in 2010. From October 2010 to April 2015, the community grew into a rich concentration of SA-MP role-play stories, characters, rules, server records, and everyday community life.
 
-- Free catalog and search previews
-- 5,857 public topics and 39,309 posts across 32 curated sections
-- Structured JSON or Markdown with canonical provenance
-- `$0.10` USDC per complete page through [x402](https://www.x402.org/) on Base
+The full archive preserves **110,023 posts across 21,400 topics and 90 forums**. To protect private and sensitive areas, the commercial agent catalog exposes a curated public collection of **39,309 posts across 5,857 topics and 32 sections**. Agents can search that collection for free, then pay only for the exact forum page needed.
+
+- Search titles, dates, sections, post counts, and previews for free
+- 110,023 posts preserved in the full historical archive
+- 5,857 public topics and 39,309 posts exposed across 32 curated agent sections
+- Citation-ready JSON or Markdown with authors, dates, conversation order, canonical URL, and source fingerprint
+- `$0.10` USDC per individual forum page through [x402](https://www.x402.org/) on Base
+- No API key, subscription, cookie handling, or HTML scraping required
 - Retrieval, grounding, and citation permitted
 
 Private/staff areas, disciplinary reports, ban appeals, applications, and other sensitive categories are excluded from the commercial API.
+
+## What it helps an agent do
+
+- Ground historical research or journalism in archived community discussions.
+- Investigate Spanish Call of Duty clan culture and community-building in the early 2010s.
+- Research SA-MP role-play stories, characters, rules, factions, and server life.
+- Explore server operations, mods, tutorials, and the evolution of an online community.
+- Compare community rules, technical problems, proposed fixes, and online culture across 2010–2015.
+- Extract quotations with stable provenance instead of parsing legacy forum HTML.
+
+The archive preserves first-hand community discussions from the period. Treat them as historical evidence and attributed statements, not as verified present-day facts.
 
 ## Install the agent skill
 
@@ -28,15 +43,15 @@ curl https://comrades-of-war.com/agent/v1/catalog
 curl 'https://comrades-of-war.com/agent/v1/search?q=servidor+rust&limit=5'
 ```
 
-Search results include a `canonical_path` and ready-to-use `purchase_url`. Discovery and previews are free.
+Search results include the title, forum, date, post count, excerpt, `canonical_path`, and ready-to-use `purchase_url`. Discovery and previews are free, so an agent can establish relevance before paying.
 
-## Buy one page
+## Buy one individual forum page
 
 ```text
 GET https://comrades-of-war.com/agent/v1/page?path=/comrades-rust-vt23474.html&format=json
 ```
 
-The first request returns `402 Payment Required`. An x402 client pays `$0.10` USDC and retries automatically. Payment goes to the public Comrades of War treasury address on Base:
+The first request returns `402 Payment Required`. An x402 client pays `$0.10` USDC and retries automatically. Each payment retrieves the selected individual forum page; it does not unlock the whole website and may not contain every page of a paginated thread. Payment goes to the public Comrades of War treasury address on Base:
 
 ```text
 0x2640b45a8F31bB24Ee7F40b3772Dba3Da27553c5
@@ -51,12 +66,13 @@ EVM_PRIVATE_KEY=0x... npm run buy -- /comrades-rust-vt23474.html
 
 Never use a primary wallet or commit a private key. The example rejects a different network, asset, recipient, or price above `$0.10`.
 
-## Useful research prompts
+## Example agent requests
 
-- Find and cite discussions about operating a Rust or SA-MP community server.
-- Compare technical problems and proposed fixes across different years.
-- Retrieve primary-source discussions about gaming communities and online culture in Spanish.
-- Trace how community members discussed server changes, events, mods, and tutorials.
+- “Find and cite how a Spanish Call of Duty clan organized matches, servers, recruitment, and community life.”
+- “Trace a SA-MP role-play storyline, its characters, factions, and rules across forum discussions.”
+- “Compare recurring technical problems and proposed fixes across different years.”
+- “Retrieve first-hand discussions about gaming communities and online culture in Spanish.”
+- “Trace how community members discussed server changes, events, mods, and tutorials.”
 
 ## Machine documentation
 
