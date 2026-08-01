@@ -53,6 +53,7 @@ Never use a primary wallet or commit a private key. The example rejects a differ
 - [Discovery JSON](https://comrades-of-war.com/agent/v1)
 - [Public catalog](https://comrades-of-war.com/agent/v1/catalog)
 - [OpenAPI](https://comrades-of-war.com/openapi.json)
+- [x402 manifest](https://comrades-of-war.com/.well-known/x402)
 - [llms.txt](https://comrades-of-war.com/llms.txt)
 - [Developer landing page](https://comrades-of-war.com/agents)
 
