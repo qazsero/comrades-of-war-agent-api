@@ -1,6 +1,6 @@
 ---
 name: comrades-of-war-archive
-description: Research the preserved history of Comrades of War, a popular Spanish Call of Duty clan and gaming community founded in 2010, including a rich SA-MP role-play corpus. Use for historical research, journalism, quotations, digital-culture analysis, clan and server operations, role-play stories, characters, rules, mods, tutorials, or comparisons across 2010–2015. Search 39,309 curated public posts for free, then buy only the exact citation-ready forum page needed through x402 on Base.
+description: Research the preserved history of Comrades of War, a popular Spanish Call of Duty clan and gaming community founded in 2010, including a rich forum record of SA-MP role-play stories, characters, rules, and community life. Use for historical research, journalism, quotations, digital-culture analysis, clan and server operations, role-play stories, characters, rules, mods, tutorials, or comparisons across 2010–2015. Search 39,309 curated public posts for free, then buy only the exact citation-ready forum page needed through x402 on Base.
 ---
 
 # Comrades of War Archive
